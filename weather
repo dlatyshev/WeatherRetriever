@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+from pathlib import Path
+
+from dotenv import load_dotenv, find_dotenv
+from gps_coordinates import get_current_gps_coordinates
+from weather_api_service import get_current_weather_by_coordinates
+from weather_formatter import format_weather
+from history import PlainFileWeatherStorage
+
+load_dotenv(find_dotenv())
+
+
+def main():
+    coordinates = get_current_gps_coordinates()
+    weather_data = get_current_weather_by_coordinates(coordinates.lat, coordinates.lng)
+    formatted_weather_data = format_weather(weather_data)
+    print(formatted_weather_data)
+    storage = PlainFileWeatherStorage(Path("./weather.txt"))
+    storage.save(weather_data)
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,12 @@
+Date: 2022-05-29 11:19:45.898854
+
+    Current weather in Pushcha-Vodytsya, UA:
+    Temperature: 15.69 °C
+    Feels like: 14.54 °C
+    Weather type: WeatherType.CLOUDS
+    Humidity: 47 %
+    Pressure: 985 hPa
+    Sunrise: 2022-05-29 04:54:26
+    Sunset: 2022-05-29 20:56:28
+    
+________________________________________
