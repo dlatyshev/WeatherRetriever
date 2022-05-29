@@ -1,8 +1,9 @@
+""" Module for retrieving weather data by coordinates. """
 import os
-import requests
 from typing import NamedTuple
 from datetime import datetime
 from enum import Enum
+import requests
 
 
 Celsius = float
@@ -11,6 +12,8 @@ URL = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lng}&appid
 
 
 class WeatherType(Enum):
+    """ Represents the weather type. """
+
     THUNDERSTORM = "Thunderstorm"
     DRIZZLE = "Drizzle"
     RAIN = "Rain"
@@ -22,6 +25,7 @@ class WeatherType(Enum):
 
 
 class Weather(NamedTuple):
+    """ A named tuple for the weather data. """
     temperature: Celsius
     feels_like: Celsius
     weather_type: WeatherType

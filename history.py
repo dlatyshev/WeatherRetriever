@@ -1,3 +1,4 @@
+""" Module for saving weather data to a file. """
 from datetime import datetime
 from pathlib import Path
 
@@ -9,6 +10,7 @@ class WeatherStorage:
     """ Interface for any storage saving data. """
 
     def save(self, weather: Weather):
+        """ Save the weather data. """
         raise NotImplementedError
 
 
@@ -20,10 +22,8 @@ class PlainFileWeatherStorage(WeatherStorage):
 
     def save(self, weather: Weather):
         with self.path.open('a+') as file:
-            file.write("Date: {}\n".format(datetime.now()))
+            file.write(f"Date: {datetime.now()}\n")
             file.write(format_weather(weather))
             file.write("\n________________________________________\n")
-
-
 
 

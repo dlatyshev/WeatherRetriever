@@ -11,6 +11,7 @@ load_dotenv(find_dotenv())
 
 
 def main():
+    """ Main entry point of the app """
     coordinates = get_current_gps_coordinates()
     weather_data = get_current_weather_by_coordinates(coordinates.lat, coordinates.lng)
     formatted_weather_data = format_weather(weather_data)

@@ -1,3 +1,4 @@
+""" Module for formatting weather data. """
 from weather_api_service import Weather
 
 
